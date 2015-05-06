@@ -1,10 +1,13 @@
 {
-  "name": "starterKit",
+  "name": "Starter Kit",
   "version": "0.0.0",
+  "homepage": "https://github.com/kmh3785/Starter-Kit",
   "authors": [
     "Kevin Hughes <kmh3785@gmail.com>"
   ],
+  "description": "Starter kit with Bower and Grunt",
   "license": "MIT",
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,7 +17,6 @@
   ],
   "dependencies": {
     "bourbon": "~4.2.2",
-    "neat": "~1.7.2",
-    "jquery": "2.1.4"
+    "neat": "~1.7.2"
   }
 }
