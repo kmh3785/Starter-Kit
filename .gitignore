@@ -3,8 +3,12 @@
 /bower_components
 /node_modules
 /.sass-cache
-/test
-/test2
+
+# Raw Adobe files #
+###################
+*.ai
+*.ps
+*.indd
 
 # Compiled source #
 ###################
