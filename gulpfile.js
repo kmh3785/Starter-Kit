@@ -19,21 +19,21 @@
   gulp.task('minify', function() {
     return gulp.src('src/*.php')
       .pipe(htmlmin({collapseWhitespace: true}))
-      .pipe(gulp.dest(''))
+      .pipe(gulp.dest('dist'))
   });
 
 // Replace
   gulp.task('replace', ['minify'], function(){
     gulp.src(['*.php'])
       .pipe(replace('data-bodyclass', '<?php body_class(); ?>'))
-      .pipe(gulp.dest(''));
+      .pipe(gulp.dest('dist'));
   });
 
 // Styles
   gulp.task('sass', function() {
     return sass('src/scss/style.scss', {style: 'expanded'})
       .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-      .pipe(gulp.dest('css'))
+      .pipe(gulp.dest('dist/css'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(minifycss())
       .pipe(gulp.dest('css'))
@@ -46,10 +46,10 @@
       .pipe(jshint('.jshintrc'))
       .pipe(jshint.reporter('default'))
       // .pipe(concat('scripts.js'))
-      .pipe(gulp.dest('js'))
+      .pipe(gulp.dest('dist/js'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(uglify())
-      .pipe(gulp.dest('js'))
+      .pipe(gulp.dest('dist/js'))
       .pipe(notify({ message: 'Scripts task complete' }));
   });
  
@@ -57,7 +57,7 @@
   gulp.task('images', function() {
     return gulp.src('src/img/**/*')
       .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-      .pipe(gulp.dest('img'))
+      .pipe(gulp.dest('dist/img'))
       .pipe(notify({ message: 'Images task complete' }));
   });
  
