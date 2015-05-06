@@ -6,8 +6,7 @@ A website starter kit with Bourbon, Bower, and Gulp
 
 Navigate to the direcory in your command line, and run the following commands
 
-- npm install [To download node plugins]
-- bower install [To download Bower plugins]
+- npm install [Will download Node and Bower plugins
 - gulp build [To compile]
 
 Once these commands are finished, you are ready to begin working
