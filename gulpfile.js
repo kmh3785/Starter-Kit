@@ -36,7 +36,7 @@
       .pipe(gulp.dest('build/css'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(minifycss())
-      .pipe(gulp.dest('css'))
+      .pipe(gulp.dest('build/css'))
       .pipe(notify({ message: 'Styles task complete' }));
   });
  
