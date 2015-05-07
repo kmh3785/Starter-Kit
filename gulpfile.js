@@ -22,6 +22,11 @@
       .pipe(gulp.dest('build'))
   });
 
+// Clear cache
+  gulp.task('clear', function (done) {
+    return cache.clearAll(done);
+  });
+
 // Replace
   gulp.task('replace', ['minify'], function(){
     gulp.src(['*.php'])
@@ -54,7 +59,7 @@
   });
  
 // Images
-  gulp.task('images', function() {
+  gulp.task('images', ['clear'] function() {
     return gulp.src('src/img/**/*')
       .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
       .pipe(gulp.dest('build/img'))
