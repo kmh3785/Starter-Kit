@@ -2,14 +2,8 @@
 A website starter kit with Bourbon, Bower, and Gulp
 
 ## Installation
-- Unpack zip file into your working directory
-
-Navigate to the direcory in your command line, and run the following commands
 
 - npm install
-- gulp build [To compile]
-
-Once these commands are finished, you are ready to begin working
 
 ## Usage
 - run the command 'gulp watch' 
