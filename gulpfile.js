@@ -15,7 +15,8 @@
       del = require('del'),
       postcss = require('gulp-postcss'),
       autoprefixer = require('autoprefixer-core'),
-      mqpacker = require('css-mqpacker');
+      mqpacker = require('css-mqpacker'),
+      csswring = require('csswring');
 
 // Minify HTML
   gulp.task('minify', function() {
