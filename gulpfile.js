@@ -13,7 +13,7 @@
       notify = require('gulp-notify'),
       cache = require('gulp-cache'),
       livereload = require('gulp-livereload'),
-      del = require('del');
+      del = require('del')
 
 // Minify HTML
   gulp.task('minify', function() {
@@ -44,7 +44,6 @@
       .pipe(gulp.dest('build/css'))
       .pipe(notify({ message: 'Styles task complete' }));
   });
- 
 // Scripts
   gulp.task('scripts', function() {
     return gulp.src('src/js/*.js')
