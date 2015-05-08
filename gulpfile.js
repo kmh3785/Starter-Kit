@@ -18,6 +18,18 @@
       mqpacker = require('css-mqpacker'),
       csswring = require('csswring');
 
+// PostCSS
+  gulp.task('css', function () {
+      var processors = [
+          autoprefixer({browsers: ['last 1 version']}),
+          mqpacker,
+          csswring
+      ];
+      return gulp.src('./src/*.css')
+          .pipe(postcss(processors))
+          .pipe(gulp.dest('./dest'));
+  });
+
 // Minify HTML
   gulp.task('minify', function() {
     return gulp.src('src/*.php')
