@@ -13,7 +13,8 @@
       cache = require('gulp-cache'),
       livereload = require('gulp-livereload'),
       del = require('del'),
-      postcss = require('gulp-postcss');
+      postcss = require('gulp-postcss'),
+      autoprefixer = require('autoprefixer-core');
 
 // Minify HTML
   gulp.task('minify', function() {

@@ -4,6 +4,7 @@
   "description": "Web starter kit with Bower and Gulp",
   "main": "index.php",
   "devDependencies": {
+    "autoprefixer-core": "^5.1.11",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-cache": "^0.2.9",
