@@ -26,8 +26,8 @@
           csswring
       ];
       return gulp.src('src/scss/**/*.scss')
-          .pipe(postcss(processors))
-          .pipe(gulp.dest('src/scss/dest'));
+          .pipe(gulp.dest('src/scss/dest'))
+          .pipe(postcss(processors))          
   });
 
 // Minify HTML
