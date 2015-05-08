@@ -25,9 +25,9 @@
           mqpacker,
           csswring
       ];
-      return gulp.src('./src/*.css')
+      return gulp.src('src/scss/**/*.scss')
           .pipe(postcss(processors))
-          .pipe(gulp.dest('./dest'));
+          .pipe(gulp.dest('src/scss/dest'));
   });
 
 // Minify HTML
