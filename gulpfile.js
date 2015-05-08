@@ -14,7 +14,8 @@
       livereload = require('gulp-livereload'),
       del = require('del'),
       postcss = require('gulp-postcss'),
-      autoprefixer = require('autoprefixer-core');
+      autoprefixer = require('autoprefixer-core'),
+      mqpacker = require('css-mqpacker');
 
 // Minify HTML
   gulp.task('minify', function() {
