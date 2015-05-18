@@ -16,7 +16,8 @@
       postcss = require('gulp-postcss'),
       autoprefixer = require('autoprefixer-core'),
       mqpacker = require('css-mqpacker'),
-      csswring = require('csswring');
+      csswring = require('csswring'),
+      modernizr = require('gulp-modernizr');
 
 // PostCSS
   gulp.task('css', function () {
@@ -25,9 +26,18 @@
           mqpacker,
           csswring
       ];
-      return gulp.src('src/scss/**/*.scss')
-          .pipe(gulp.dest('src/scss/dest'))
-          .pipe(postcss(processors))          
+
+      return gulp.src('src/css/imports.css')
+        .pipe(gulp.dest('src/css'))
+        .pipe(postcss(processors))
+        .pipe(notify({ message: 'Postprocessing complete' }));         
+  });
+// Styles
+  gulp.task('sass', function() {
+    return sass('src/scss/imports.scss', {style: 'expanded'})
+      // .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+      .pipe(gulp.dest('build/css'))
+      .pipe(notify({ message: 'Preprocessing complete' }));
   });
 
 // Minify HTML
@@ -49,19 +59,11 @@
       .pipe(gulp.dest('build'));
   });
 
-// Styles
-  gulp.task('sass', function() {
-    return sass('src/scss/style.scss', {style: 'expanded'})
-      .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-      .pipe(gulp.dest('build/css'))
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(minifycss())
-      .pipe(gulp.dest('build/css'))
-      .pipe(notify({ message: 'Styles task complete' }));
-  });
+
 // Scripts
   gulp.task('scripts', function() {
     return gulp.src('src/js/*.js')
+      .pipe(modernizr())
       .pipe(jshint('.jshintrc'))
       .pipe(jshint.reporter('default'))
       // .pipe(concat('scripts.js'))
